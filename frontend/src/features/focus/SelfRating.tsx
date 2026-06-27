@@ -7,9 +7,9 @@ export function SelfRating() {
   if (!showRating) return null;
 
   return (
-    <Modal open={showRating} onClose={dismissRating} title="Rate your focus">
+    <Modal open={showRating} onClose={dismissRating} title="专注自评">
       <div className="space-y-4">
-        <p className="text-sm text-gray-400">How focused were you during this session?</p>
+        <p className="text-sm text-gray-400">这次专注你有多投入？</p>
         <div className="flex gap-2 justify-center">
           {[1, 2, 3, 4, 5].map((rating) => (
             <button
@@ -22,11 +22,11 @@ export function SelfRating() {
           ))}
         </div>
         <div className="flex justify-between text-xs text-gray-600 px-1">
-          <span>Distracted</span>
-          <span>Deep flow</span>
+          <span>分心</span>
+          <span>深度心流</span>
         </div>
         <div className="flex justify-end">
-          <Button variant="ghost" onClick={dismissRating}>Skip</Button>
+          <Button variant="ghost" onClick={dismissRating}>跳过</Button>
         </div>
       </div>
     </Modal>

@@ -21,7 +21,7 @@ export function TimerWidget() {
         </div>
         {currentEntry?.task_id && (
           <div className="text-sm text-gray-400">
-            {tasks.find((t) => t.id === currentEntry.task_id)?.title || 'Tracking...'}
+            {tasks.find((t) => t.id === currentEntry.task_id)?.title || '追踪中...'}
           </div>
         )}
       </div>
@@ -29,7 +29,7 @@ export function TimerWidget() {
       <div className="flex justify-center gap-3 mb-4">
         {!isRunning ? (
           <Button onClick={() => startTimer()} size="lg">
-            Start Tracking
+            开始追踪
           </Button>
         ) : (
           <Button onClick={stopTimer} variant="danger" size="lg">
@@ -40,7 +40,7 @@ export function TimerWidget() {
 
       {isRunning && (
         <div className="mt-4 border-t border-gray-800 pt-4">
-          <p className="text-xs text-gray-500 mb-2">Quick task switch:</p>
+          <p className="text-xs text-gray-500 mb-2">快速切换任务：</p>
           <div className="flex flex-wrap gap-2">
             {activeTasks.slice(0, 5).map((t) => (
               <button

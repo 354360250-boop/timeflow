@@ -22,7 +22,7 @@ export function TodayView() {
 
   return (
     <div className="p-6 space-y-6">
-      <h2 className="text-2xl font-bold">Today</h2>
+      <h2 className="text-2xl font-bold">今日</h2>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         <div className="lg:col-span-2 space-y-6">
@@ -32,15 +32,15 @@ export function TodayView() {
 
         <div className="space-y-6">
           <Card>
-            <div className="text-sm text-gray-400 mb-1">Tracked today</div>
+            <div className="text-sm text-gray-400 mb-1">今日追踪</div>
             <div className="text-3xl font-bold">{hours}<span className="text-lg text-gray-500 font-normal">h</span></div>
           </Card>
           <Card>
-            <div className="text-sm text-gray-400 mb-1">Focus sessions</div>
+            <div className="text-sm text-gray-400 mb-1">专注次数</div>
             <div className="text-3xl font-bold">{report?.focus_sessions || 0}</div>
           </Card>
           <Card>
-            <div className="text-sm text-gray-400 mb-3">Project breakdown</div>
+            <div className="text-sm text-gray-400 mb-3">项目分布</div>
             {report && <TimePieChart projects={report.projects} />}
           </Card>
         </div>

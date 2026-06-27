@@ -26,17 +26,17 @@ export function TaskPage() {
 
   return (
     <div className="p-6 space-y-6">
-      <h2 className="text-2xl font-bold">Tasks</h2>
+      <h2 className="text-2xl font-bold">任务</h2>
 
       <div className="flex gap-2">
         <input
           value={newTitle}
           onChange={(e) => setNewTitle(e.target.value)}
           onKeyDown={(e) => e.key === 'Enter' && handleCreate()}
-          placeholder="Add a task..."
+          placeholder="添加任务..."
           className="flex-1 bg-gray-900 border border-gray-800 rounded-lg px-4 py-2 text-sm text-gray-200 focus:outline-none focus:ring-1 focus:ring-brand-500"
         />
-        <Button onClick={handleCreate}>Add</Button>
+        <Button onClick={handleCreate}>添加</Button>
       </div>
 
       <div className="space-y-2">
@@ -50,16 +50,16 @@ export function TaskPage() {
             </div>
             <div className="flex items-center gap-3">
               {task.estimated_hours && (
-                <span className="text-xs text-gray-500">{task.estimated_hours}h est.</span>
+                <span className="text-xs text-gray-500">{task.estimated_hours}小时 预估</span>
               )}
               <Badge variant={task.status === 'done' ? 'success' : task.status === 'in_progress' ? 'warning' : 'default'}>
-                {task.status === 'todo' ? 'To Do' : task.status === 'in_progress' ? 'In Progress' : 'Done'}
+                {task.status === 'todo' ? '待办' : task.status === 'in_progress' ? '进行中' : '已完成'}
               </Badge>
             </div>
           </Card>
         ))}
         {tasks.length === 0 && (
-          <p className="text-gray-600 text-center py-8">No tasks yet. Create one above.</p>
+          <p className="text-gray-600 text-center py-8">暂无任务，请在上方创建。</p>
         )}
       </div>
     </div>

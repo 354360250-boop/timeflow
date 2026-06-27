@@ -20,8 +20,8 @@ export function WeeklyReportPage() {
   if (!report) {
     return (
       <div className="p-6">
-        <h2 className="text-2xl font-bold mb-6">Weekly Report</h2>
-        <p className="text-gray-500">Loading...</p>
+        <h2 className="text-2xl font-bold mb-6">周报</h2>
+        <p className="text-gray-500">加载中...</p>
       </div>
     );
   }
@@ -38,15 +38,15 @@ export function WeeklyReportPage() {
 
   return (
     <div className="p-6 space-y-6">
-      <h2 className="text-2xl font-bold">Weekly Report</h2>
+      <h2 className="text-2xl font-bold">周报</h2>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
         <Card>
-          <div className="text-sm text-gray-400">Total hours</div>
+          <div className="text-sm text-gray-400">总时长</div>
           <div className="text-2xl font-bold">{(report.total_seconds / 3600).toFixed(1)}h</div>
         </Card>
         <Card>
-          <div className="text-sm text-gray-400">Avg focus rating</div>
+          <div className="text-sm text-gray-400">平均专注评分</div>
           <div className="text-2xl font-bold">
             {report.focus_scores.length > 0
               ? (report.focus_scores.reduce((a, b) => a + b.avg_rating, 0) / report.focus_scores.length).toFixed(1)
@@ -54,13 +54,13 @@ export function WeeklyReportPage() {
           </div>
         </Card>
         <Card>
-          <div className="text-sm text-gray-400">Projects tracked</div>
+          <div className="text-sm text-gray-400">追踪项目数</div>
           <div className="text-2xl font-bold">{report.projects.length}</div>
         </Card>
       </div>
 
       <Card>
-        <h3 className="text-sm font-medium text-gray-400 mb-4">Daily hours</h3>
+        <h3 className="text-sm font-medium text-gray-400 mb-4">每日时长</h3>
         <ResponsiveContainer width="100%" height={200}>
           <BarChart data={hoursData}>
             <CartesianGrid strokeDasharray="3 3" stroke="#1f2937" />
@@ -73,7 +73,7 @@ export function WeeklyReportPage() {
       </Card>
 
       <Card>
-        <h3 className="text-sm font-medium text-gray-400 mb-4">Focus quality trend</h3>
+        <h3 className="text-sm font-medium text-gray-400 mb-4">专注质量趋势</h3>
         <ResponsiveContainer width="100%" height={200}>
           <LineChart data={focusData}>
             <CartesianGrid strokeDasharray="3 3" stroke="#1f2937" />

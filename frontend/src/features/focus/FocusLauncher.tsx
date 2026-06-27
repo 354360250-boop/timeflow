@@ -4,9 +4,9 @@ import { useFocusStore } from '../../stores/focusStore';
 import { useTaskStore } from '../../stores/taskStore';
 
 const MODES = [
-  { id: 'pomodoro', label: 'Pomodoro', desc: '25 min focus + 5 min break', duration: 25 * 60 },
-  { id: 'deep_work', label: 'Deep Work', desc: '90 min uninterrupted', duration: 90 * 60 },
-  { id: 'free', label: 'Free', desc: 'Start and stop anytime', duration: 0 },
+  { id: 'pomodoro', label: '番茄钟', desc: '25 分钟专注 + 5 分钟休息', duration: 25 * 60 },
+  { id: 'deep_work', label: '深度工作', desc: '90 分钟不间断', duration: 90 * 60 },
+  { id: 'free', label: '自由', desc: '随时开始和停止', duration: 0 },
 ];
 
 export function FocusLauncher() {
@@ -26,10 +26,10 @@ export function FocusLauncher() {
   return (
     <>
       <Button onClick={() => setOpen(true)} variant="secondary" size="lg" className="w-full">
-        Start Focus Session
+        开始专注
       </Button>
 
-      <Modal open={open} onClose={() => setOpen(false)} title="New Focus Session">
+      <Modal open={open} onClose={() => setOpen(false)} title="新建专注">
         <div className="space-y-4">
           <div className="grid grid-cols-3 gap-2">
             {MODES.map((m) => (
@@ -50,7 +50,7 @@ export function FocusLauncher() {
 
           {selectedMode !== 'free' && (
             <div>
-              <label className="text-sm text-gray-400 block mb-1">Duration (minutes)</label>
+              <label className="text-sm text-gray-400 block mb-1">时长（分钟）</label>
               <input
                 type="number"
                 value={customDuration}
@@ -63,8 +63,8 @@ export function FocusLauncher() {
           )}
 
           <div className="flex justify-end gap-2 pt-2">
-            <Button variant="ghost" onClick={() => setOpen(false)}>Cancel</Button>
-            <Button onClick={handleStart}>Start</Button>
+            <Button variant="ghost" onClick={() => setOpen(false)}>取消</Button>
+            <Button onClick={handleStart}>开始</Button>
           </div>
         </div>
       </Modal>

@@ -15,7 +15,7 @@ export function FocusSession() {
     <div className="fixed inset-0 z-40 bg-gray-950 flex flex-col items-center justify-center">
       <div className="text-center space-y-8">
         <div className="text-sm font-medium text-brand-400 uppercase tracking-widest">
-          {mode === 'pomodoro' ? 'Pomodoro' : mode === 'deep_work' ? 'Deep Work' : 'Free Focus'}
+          {mode === 'pomodoro' ? '番茄钟' : mode === 'deep_work' ? '深度工作' : '自由专注'}
         </div>
 
         <div className="text-8xl font-mono font-bold tracking-tight">
@@ -25,8 +25,8 @@ export function FocusSession() {
         {planned > 0 && (
           <div className="w-64">
             <div className="flex justify-between text-xs text-gray-500 mb-1">
-              <span>Elapsed</span>
-              <span>{formatTime(remaining)} remaining</span>
+              <span>已过</span>
+              <span>{formatTime(remaining)} 剩余</span>
             </div>
             <div className="h-1.5 bg-gray-800 rounded-full overflow-hidden">
               <div
@@ -39,7 +39,7 @@ export function FocusSession() {
 
         <div className="flex gap-4">
           <Button onClick={() => endSession()} variant="secondary">
-            End Session
+            结束专注
           </Button>
         </div>
       </div>

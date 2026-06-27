@@ -2,9 +2,9 @@ import { NavLink } from 'react-router-dom';
 import clsx from 'clsx';
 
 const navItems = [
-  { to: '/', label: 'Today', icon: '○' },
-  { to: '/reports', label: 'Reports', icon: '◫' },
-  { to: '/tasks', label: 'Tasks', icon: '☰' },
+  { to: '/', label: '今日', icon: '○' },
+  { to: '/reports', label: '周报', icon: '◫' },
+  { to: '/tasks', label: '任务', icon: '☰' },
 ];
 
 export function Sidebar() {
