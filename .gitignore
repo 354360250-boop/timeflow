@@ -1,0 +1,18 @@
+# TimeFlow
+
+# Dependencies
+node_modules/
+
+# Environment
+.env
+.env.local
+
+# Build
+dist/
+
+# IDE
+.vscode/
+.idea/
+
+# Superpowers
+.superpowers/
