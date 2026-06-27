@@ -16,3 +16,8 @@ dist/
 
 # Superpowers
 .superpowers/
+
+# Python
+__pycache__/
+*.pyc
+*.db
